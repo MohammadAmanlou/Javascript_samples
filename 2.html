@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<p dir="rtl">kill the stickman</p>
+<p id="no">0</p>
+<img onclick="k=k+1" id='mc' src="orange_stickman_by_dabestdeviacountevah-dcb2f0a.jpg" width="100">
+<script>
+var k=0;
+var mc=document.getElementById("mc");
+setInterval(mrl,500);
+function mrl()
+{
+   mc.style.marginLeft=40*(k+1)*Math.random()+"px";
+   mc.style.marginTop=10*(k+1)*Math.random()+"px";
+   no.innerHTML=k;
+}
+</script>
+<html>

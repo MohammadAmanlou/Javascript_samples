@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+  <canvas id="cn" width="800" height="600" ></canvas>
+<script>
+    var c=document.getElementById("cn");
+    var t=c.getContext("2d")
+    var a=0,xgh=0,ygh=0,x,y;
+    t.translate(300,250);
+    setInterval(mrl,10);
+    function mrl()
+    {
+      t.beginPath();
+      t.strokeStyle="black";
+      if(a==0){ xgh=x;  ygh=y; }
+      a+=0.01;
+      x=150*Math.cos(a)+50*Math.cos(5.1*a)
+      y=150*Math.sin(a)+50*Math.sin(5.1*a)
+      t.moveTo(xgh,ygh);
+      t.lineTo(x,y);
+      xgh=x;
+      ygh=y;
+      t.stroke();
+    }
+</script>
+</html>

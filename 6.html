@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+  <button type="button" onclick="ctx.clearRect(0,0,800,600)">Clear!</button>
+  <input type="color" id="rangi" onchange="rangavaz();" onclick="rangavaz();">
+</br>
+  <canvas onmousemove="sadra(event);" id="cn" width="800" height="600" ></canvas>
+  <script>
+    var rang=0;
+    var xghbli=0,yghbli=0;
+    var c=document.getElementById("cn");
+    var ctx=c.getContext("2d");
+    function rangavaz()
+    {
+        var rangikld=document.getElementById("rangi");
+        rang=rangikld.value;
+    }
+    function sadra(event)
+      {
+        var x=event.clientX-8,y=event.clientY-38;
+        if(event.buttons==1)
+        {
+        ctx.beginPath();
+        ctx.strokeStyle=rang;
+        ctx.moveTo(xghbli,yghbli);
+        ctx.lineTo(x,y);
+        ctx.moveTo(c.width-xghbli,yghbli);
+        ctx.lineTo(c.width-x,y);
+        ctx.stroke();
+        }
+      xghbli=x;
+      yghbli=y;
+    }
+  </script>
+</html>

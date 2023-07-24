@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+</head>
+<script>
+var n,m,p=0;
+n=prompt("enter a number");
+for(m=2;n!=1;)
+  if(n % m ==0)
+  {
+    if(p) document.write("*");
+    document.write(m);
+    p=1;
+    n = n/m;
+  }
+  else m++;
+</script>

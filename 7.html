@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+  <canvas id="cn" width="800" height="600" ></canvas>
+  <script>
+    var c=document.getElementById("cn");
+    var t=c.getContext("2d")
+    var x,y;
+    for(y=0;y<600;y+=20)
+        for(x=0;x<630;x+=30)
+        {
+          t.beginPath();
+          t.moveTo(x,0);    t.lineTo(x,600);
+          t.moveTo(0,y);    t.lineTo(630,y);
+          t.arc(x,y,10,0,x/100);
+          t.stroke();
+        }
+var i,p=0,di=0.0001;
+for( i=-1; i<=1 ; i=i+di)
+  p += 2*di * Math.sqrt( 1 - i*i );
+document.write(p);document.write("<br/>");
+    </script>
+</html>
